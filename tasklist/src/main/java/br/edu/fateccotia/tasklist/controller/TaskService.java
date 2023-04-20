@@ -1,6 +1,7 @@
 package br.edu.fateccotia.tasklist.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -23,4 +24,20 @@ public class TaskService {
 		return taskRepository.findAll();
 	}
 
+	public Optional<Task> findById(Integer id) {
+		return taskRepository.findById(id);
+	}
+
+	public List<Task> findByDescription(String query) {
+		return taskRepository.findByDescriptionStartingWithIgnoreCase(query);
+	}
+
 }
+
+
+
+
+
+
+
+
