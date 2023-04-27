@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.fateccotia.tasklist.model.Task;
+import br.edu.fateccotia.tasklist.service.TaskService;
 
 @RestController
 @RequestMapping("/tasks")

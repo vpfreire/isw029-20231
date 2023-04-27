@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,15 +16,18 @@ public class Task {
 	private Integer id;
 	private String description;
 	private TaskStatus status = TaskStatus.PENDING;
+	@ManyToOne
+	private User user;
 	
 	public Task() {
 		
 	}
 	
-	public Task(Integer id, String description, TaskStatus status) {
+	public Task(Integer id, String description, TaskStatus status, User user) {
 		this.id = id;
 		this.description = description;
 		this.status = status;
+		this.user = user;
 	}
 	
 	public Integer getId() {
@@ -44,6 +48,10 @@ public class Task {
 	public void setStatus(TaskStatus status) {
 		this.status = status;
 	}
-	
-	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
