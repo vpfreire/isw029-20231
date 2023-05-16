@@ -1,0 +1,3 @@
+2023-05-11 20:07:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TASK" not found; SQL statement:
+select task.*, user.* from task left join users on users.id = task.user_id where task.user_id = 1 [42102-214]
